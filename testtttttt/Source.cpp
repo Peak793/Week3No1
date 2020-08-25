@@ -8,18 +8,18 @@ double det(int* p)   //<-----Self created function and Pointer(Actually this thi
 	int down3 = (*(p + 14)) * (*(p + 8)) * (*(p + 2));		
 	int down2 = (*(p + 13)) * (*(p + 7)) * (*(p + 1));
 	int down1 = (*(p + 12)) * (*(p + 6)) * (*(p + 0));
-	printf("up1     = (%dx%dx%d)x-1 = %d\n", *(p + 10), *(p + 6), *(p + 2), up1);
-	printf("up2     = (%dx%dx%d)x-1 = %d\n", *(p + 11), *(p + 7), *(p + 3), up2);
-	printf("up3     = (%dx%dx%d)x-1 = %d\n", *(p + 12), *(p + 8), *(p + 4), up3);
-	printf("down1   = (%dx%dx%d)    = %d\n", *(p + 0), *(p + 6), *(p + 12),down1);
-	printf("down2   = (%dx%dx%d)    = %d\n", *(p + 1), *(p + 7), *(p + 13), down2);
-	printf("down3   = (%dx%dx%d)    = %d\n", *(p + 2), *(p + 8), *(p + 14), down3);
+	printf("Up1     = (%dx%dx%d)x-1 = %d\n", *(p + 10), *(p + 6), *(p + 2), up1);
+	printf("Up2     = (%dx%dx%d)x-1 = %d\n", *(p + 11), *(p + 7), *(p + 3), up2);
+	printf("Up3     = (%dx%dx%d)x-1 = %d\n", *(p + 12), *(p + 8), *(p + 4), up3);
+	printf("Down1   = (%dx%dx%d)    = %d\n", *(p + 0), *(p + 6), *(p + 12),down1);
+	printf("Down2   = (%dx%dx%d)    = %d\n", *(p + 1), *(p + 7), *(p + 13), down2);
+	printf("Down3   = (%dx%dx%d)    = %d\n", *(p + 2), *(p + 8), *(p + 14), down3);
 	int sumdown = down1 + down2 + down3;
 	printf("sumdown = (%d) + (%d) + (%d) = %d\n", down1,down2,down3,sumdown);
 	int sumup = up1 + up2 + up3;
-	printf("sumup   = (%d) + (%d) + (%d) = %d\n",up1,up2,up3, sumup);
+	printf("Sumup   = (%d) + (%d) + (%d) = %d\n",up1,up2,up3, sumup);
 	int sum = sumup + sumdown;
-	printf("sum     = (%d) + (%d) = %d\n", sumup,sumdown,sum);
+	printf("Det     = (%d) + (%d) = %d\n", sumup,sumdown,sum);
 	return sum;
 }
 int main()
