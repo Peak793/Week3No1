@@ -3,23 +3,23 @@
 double det(int* p)   //<-----Self created function and Pointer(Actually this thing makes my life a little more complicate than it should be....)
 {
 	int up1 = (*(p + 2)) * (*(p + 6)) * (*(p + 10))*(-1);
-	printf("up1 = %dx%dx%d = %d\n", *(p + 2), *(p + 6), *(p + 10), (*(p + 2)) * (*(p + 6)) * (*(p + 10)) * (-1));
 	int up2 = (*(p + 3)) * (*(p + 7)) * (*(p + 11))*(-1);
-	printf("up2 = %dx%dx%d = %d\n", *(p + 3), *(p + 7), *(p + 11), (*(p + 3)) * (*(p + 7)) * (*(p + 11)) * (-1));
 	int up3 = (*(p + 4)) * (*(p + 8)) * (*(p + 12))*(-1);
-	printf("up3 = %dx%dx%d = %d\n", *(p + 4), *(p + 8), *(p + 12), (*(p + 4)) * (*(p + 8)) * (*(p + 12)) * (-1));
-	int down1 = (*(p + 14)) * (*(p + 8)) * (*(p + 2));
-	printf("down1 = %dx%dx%d = %d\n", *(p + 14), *(p + 8), *(p + 2), (*(p + 14)) * (*(p + 8)) * (*(p + 2)));		
+	int down3 = (*(p + 14)) * (*(p + 8)) * (*(p + 2));		
 	int down2 = (*(p + 13)) * (*(p + 7)) * (*(p + 1));
-	printf("down2 = %dx%dx%d = %d\n", *(p + 13), *(p + 7), *(p + 1), (*(p + 13)) * (*(p + 7)) * (*(p + 1)));
-	int down3 = (*(p + 12)) * (*(p + 6)) * (*(p + 0));
-	printf("down3 %dx%dx%d = %d\n", *(p + 12), *(p + 6), *(p + 0), (*(p + 12)) * (*(p + 6)) * (*(p + 0)));
+	int down1 = (*(p + 12)) * (*(p + 6)) * (*(p + 0));
+	printf("up1     = (%dx%dx%d)x-1 = %d\n", *(p + 10), *(p + 6), *(p + 2), up1);
+	printf("up2     = (%dx%dx%d)x-1 = %d\n", *(p + 11), *(p + 7), *(p + 3), up2);
+	printf("up3     = (%dx%dx%d)x-1 = %d\n", *(p + 12), *(p + 8), *(p + 4), up3);
+	printf("down1   = (%dx%dx%d)    = %d\n", *(p + 0), *(p + 6), *(p + 12),down1);
+	printf("down2   = (%dx%dx%d)    = %d\n", *(p + 1), *(p + 7), *(p + 13), down2);
+	printf("down3   = (%dx%dx%d)    = %d\n", *(p + 2), *(p + 8), *(p + 14), down3);
 	int sumdown = down1 + down2 + down3;
-	printf("sumdown= %d + %d + %d = %d\n", down1,down2,down3,sumdown);
+	printf("sumdown = (%d) + (%d) + (%d) = %d\n", down1,down2,down3,sumdown);
 	int sumup = up1 + up2 + up3;
-	printf("sumup = %d + %d + %d = %d\n",up1,up2,up3, sumup);
+	printf("sumup   = (%d) + (%d) + (%d) = %d\n",up1,up2,up3, sumup);
 	int sum = sumup + sumdown;
-	printf("sum= %d + %d = %d\n", sumup,sumdown,sum);
+	printf("sum     = (%d) + (%d) = %d\n", sumup,sumdown,sum);
 	return sum;
 }
 int main()
@@ -47,7 +47,7 @@ int main()
 				cx[i][j] = x[i][j];
 			}
 			else
-			{
+			{											
 				cx[i][j] = x[i][j - 3];
 			}
 		}
@@ -61,8 +61,8 @@ int main()
 		}
 		printf("\n");
 	}
-	printf("\n\n");
+	printf("\nSolution\n");
 	int de = det(&cx[0][0]);
-	printf("Det : %d",de);
+	printf("\nDet : %d\n",de);
 	return 0;
 }
